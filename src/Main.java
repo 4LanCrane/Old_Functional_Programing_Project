@@ -16,20 +16,23 @@ public class Main {
                 new Student("John Dane", "English", 1, 23, 6)
         );
 
+register.allStudents();
 
 
 
 
-      printStudents(register);
     }
 
-
+/*
     public static void printStudents(Register register) {
         register.getStudents().forEach(student -> System.out.println(student.getFullName()));
     }
 
 
-    public static void addStudent(Register register, Student student) {
+
+
+
+   public static void addStudent(Register register, Student student) {
         register.add(student);
     }
 
@@ -37,7 +40,7 @@ public class Main {
         register.getStudents().removeIf(student -> student.getStudentId() == id);
     }
 
-    public void getStudentById(Register register, int id) {
+    public static void getStudentById(Register register, int id) {
         register.getStudents().stream().filter(student -> student.getStudentId() == id).forEach(student -> System.out.println(student.getFullName()));
     }
 
@@ -45,5 +48,5 @@ public class Main {
     public void getStudentsByModule(Register register, String module) {
         register.getStudents().stream().filter(student -> student.getModule().equals(module)).forEach(student -> System.out.println(student.getFullName()));
     }
-
+*/
 }

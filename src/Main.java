@@ -11,7 +11,7 @@ public class Main {
         register.add(new Student("John Doe", "Math", 1, 18, 1),
                 new Student("Bane Done", "English", 1, 19, 2),
                 new Student("Jane Dane", "Science", 1, 20, 3),
-                new Student("Dane Dane", "History", 1, 21, 4),
+                new Student("Pane Dane", "History", 1, 21, 4),
                 new Student("Jane Doe", "Math", 1, 22, 5),
                 new Student("John Dane", "English", 1, 23, 6)
         );

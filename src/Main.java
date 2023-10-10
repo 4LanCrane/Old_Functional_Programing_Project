@@ -1,8 +1,5 @@
 
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -15,20 +12,78 @@ public class Main {
                 new Student("Jane Doe", "Math", 1, 22, 5),
                 new Student("John Dane", "English", 1, 23, 6)
         );
+        menu(register);
+    }
 
-register.allStudents();
-
-
-
+// a function that gives the user a menu to choose from using a switch statement, then calls the appropriate function from the Register class
+    public static void menu(Register register) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. Add Student");
+        System.out.println("2. Remove Student");
+        System.out.println("3. Get Student By ID");
+        System.out.println("4. Get Students By Module");
+        System.out.println("5. Print All Students");
+        System.out.println("6. Exit");
+        System.out.println("Enter your choice: ");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println("Enter full name: ");
+                String inputFullName = scanner.next();
+                System.out.println("Enter module: ");
+                String inputModule = scanner.next();
+                System.out.println("Enter Class Year: ");
+                int inputClassYear = scanner.nextInt();
+                System.out.println("Enter age: ");
+                int inputAge = scanner.nextInt();
+                System.out.println("Enter student id: ");
+                int inputId = scanner.nextInt();
+                addStudent(register, new Student(inputFullName, inputModule, inputClassYear, inputAge, inputId));
+                break;
+            case 2:
+                System.out.println("Enter student id: ");
+                int enteredId = scanner.nextInt();
+                removeStudentByID(register, enteredId);
+                break;
+            case 3:
+                System.out.println("Enter student id: ");
+                int studentsId = scanner.nextInt();
+                getStudentById(register, studentsId);
+                break;
+            case 4:
+                System.out.println("Enter module: ");
+               String m = scanner.next();
+                getStudentsByModule(register, m);
+                break;
+            case 5:
+                printStudents(register);
+                break;
+            case 6:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid choice");
+                break;
+        }
+        enter();
+        menu(register);
 
     }
 
-/*
+
+
+public static void enter() {
+        System.out.println("Press enter to continue...");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
+
+
+   // function that prints all students
     public static void printStudents(Register register) {
-        register.getStudents().forEach(student -> System.out.println(student.getFullName()));
+        register.getStudents().forEach(student -> System.out.println(student.getFullName() + " " + student.getModule() + " " + student.getYearLevel() + " " + student.getAge() + " " + student.getStudentId()));
     }
-
-
 
 
 
@@ -36,7 +91,7 @@ register.allStudents();
         register.add(student);
     }
 
-    public void removeStudentByID(Register register, int id) {
+    public static void removeStudentByID(Register register, int id) {
         register.getStudents().removeIf(student -> student.getStudentId() == id);
     }
 
@@ -45,8 +100,8 @@ register.allStudents();
     }
 
 
-    public void getStudentsByModule(Register register, String module) {
+    public static void getStudentsByModule(Register register, String module) {
         register.getStudents().stream().filter(student -> student.getModule().equals(module)).forEach(student -> System.out.println(student.getFullName()));
     }
-*/
+
 }

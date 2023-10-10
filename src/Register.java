@@ -32,4 +32,27 @@ public class Register {
     }
 
 
+    //a function that returns a student by their id
+    public Student getStudentById(int id) {
+        return students.stream().filter(student -> student.getStudentId() == id).findFirst().orElse(null);
+    }
+
+
+// a function that add a student and allows input
+    public void addStudent(String fullName, String module, int yearLevel, int age, int studentId) {
+        students.add(new Student(fullName, module, yearLevel, age, studentId));
+    }
+
+    //a function that returns a list of all students, their module, and their year level,age and student id
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+
+
+
+
+
+
+
 }

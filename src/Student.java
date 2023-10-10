@@ -1,7 +1,7 @@
 public class Student {
     private String fullName;
     private String module;
-    private int yearLevel;
+    private int classYear;
     private int age;
     private int studentId;
 
@@ -9,7 +9,7 @@ public class Student {
     public Student(String fullName, String module, int yearLevel, int age, int studentId) {
         this.fullName = fullName;
         this.module = module;
-        this.yearLevel = yearLevel;
+        this.classYear = yearLevel;
         this.age = age;
         this.studentId = studentId;
     }
@@ -26,7 +26,7 @@ public class Student {
 
     // Create a function to return year level
     public int getYearLevel() {
-        return yearLevel;
+        return classYear;
     }
 
     // Create a function to return age

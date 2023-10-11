@@ -43,6 +43,8 @@ public class Main {
                 System.out.println("Enter module: ");
                 String inputModule = scanner.next();
 
+
+
                 System.out.println("Enter Class Year: ");
                 int inputClassYear = scanner.nextInt();
 

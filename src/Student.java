@@ -1,5 +1,5 @@
 public class Student {
-    private String fullName;
+    private String fullName = "";
     private String module;
     private int classYear;
     private int age;
@@ -29,12 +29,12 @@ public class Student {
         return classYear;
     }
 
-    // Create a function to return age
+    // function to return age
     public int getAge() {
         return age;
     }
 
-    // Create a function to return student id
+    // function to return student id
     public int getStudentId() {
         return studentId;
     }

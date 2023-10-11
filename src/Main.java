@@ -29,16 +29,29 @@ public class Main {
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
+                scanner.nextLine();
+                String inputFullName = "";
+                while(inputFullName.isEmpty()){
                 System.out.println("Enter full name: ");
-                String inputFullName = scanner.next();
+                inputFullName = scanner.nextLine();
+                if(inputFullName.isEmpty()){
+                    System.out.println("Name was not entered");
+                }
+
+                }
+
                 System.out.println("Enter module: ");
                 String inputModule = scanner.next();
+
                 System.out.println("Enter Class Year: ");
                 int inputClassYear = scanner.nextInt();
+
                 System.out.println("Enter age: ");
                 int inputAge = scanner.nextInt();
+
                 System.out.println("Enter student id: ");
                 int inputId = scanner.nextInt();
+
                 addStudent(register, new Student(inputFullName, inputModule, inputClassYear, inputAge, inputId));
                 break;
             case 2:

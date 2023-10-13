@@ -52,7 +52,7 @@ public class Main {
                 String inputModule = scanner.next();
 
 
-
+                // input validation to make sure int is entered
                 System.out.print("Please enter Class Year");
                 while(!scanner.hasNextInt()){
                     scanner.next();

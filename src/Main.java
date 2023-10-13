@@ -16,6 +16,8 @@ public class Main {
         menu(register);
     }
 
+
+
 // a function that gives the user a menu to choose from using a switch statement, then calls the appropriate function from the Register class
     public static void menu(Register register) {
         Scanner scanner = new Scanner(System.in);
@@ -26,7 +28,13 @@ public class Main {
         System.out.println("5. Print All Students");
         System.out.println("6. Exit");
         System.out.println("Enter your choice: ");
+
+        while(!scanner.hasNextInt()){
+            System.out.println("Incorrect input");
+            scanner.next();
+        }
         int choice = scanner.nextInt();
+
         switch (choice) {
             case 1:
                 scanner.nextLine();
@@ -45,8 +53,14 @@ public class Main {
 
 
 
-                System.out.println("Enter Class Year: ");
+                System.out.print("Please enter Class Year");
+                while(!scanner.hasNextInt()){
+                    scanner.next();
+                    System.out.println("Incorrect input. Please enter Class Year");
+                }
                 int inputClassYear = scanner.nextInt();
+
+
 
                 System.out.println("Enter age: ");
                 int inputAge = scanner.nextInt();
